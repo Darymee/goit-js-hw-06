@@ -13,22 +13,12 @@ const images = [
   },
 ];
 
-const makeGallery = ({ url, alt }) => {
-  const galleryEl = document.createElement("li");
-  galleryEl.classList.add("gallery__item");
-  const galleryImage = document.createElement("image");
-  galleryImage.classList.add("gallery__image");
-  galleryImage.url = url;
-  galleryImage.alt = alt;
+const gallery = document.querySelector(".gallery");
 
-  galleryEl.append(galleryImage);
-  return galleryEl;
-};
+const newImage = images
+  .map(({ url, alt }) => {
+    return `<li class="gallery___item"><img class="gallery__image" src='${url}' alt='${alt}'></li>`;
+  })
+  .join(" ");
 
-const elements = images.map(makeGallery);
-console.log(elements);
-
-const ulEl = document.querySelector(".gallery");
-
-ulEl.insertAdjacentHTML("beforeend", elements);
-console.log(ulEl);
+gallery.insertAdjacentHTML("beforeend", newImage);
