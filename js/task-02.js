@@ -14,6 +14,8 @@ const ingredients = [
   "Condiments",
 ];
 
+// **** Variant 1
+
 const createList = (ingredients) => {
   return ingredients.map((ingredient) => {
     const liEl = document.createElement("li");
@@ -28,3 +30,33 @@ const ulEl = document.querySelector("#ingredients");
 const list = createList(ingredients);
 console.log(ulEl);
 ulEl.append(...list);
+
+// **** Variant 2
+
+// const elements = [];
+// for (let i = 0; i < ingredients.length; i += 1) {
+//   // console.log(ingredients[i]);
+//   const ingredient = ingredients[i];
+//   const liEl = document.createElement("li");
+//   liEl.textContent = ingredient;
+//   liEl.classList.add("item");
+//   elements.push(liEl);
+// }
+
+// // console.log(elements);
+// const ulEl = document.querySelector("#ingredients");
+// // console.log(ulEl);
+// ulEl.append(...elements);
+
+// **** Variant 3
+// const elements = ingredients.map((ingredient) => {
+//   const liEl = document.createElement("li");
+//   liEl.textContent = ingredient;
+//   liEl.classList.add("item");
+//   // console.log(liEl)
+//   return liEl;
+// });
+// console.log(elements);
+// const ulEl = document.querySelector("#ingredients");
+// // console.log(ulEl);
+// ulEl.append(...elements);
