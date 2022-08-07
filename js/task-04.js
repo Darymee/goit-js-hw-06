@@ -20,15 +20,15 @@ console.log(valueEl);
 // console.log(buttonDecrement);
 // console.log(buttonIncrement);
 
-const makeDecrement = function () {
+function makeDecrement() {
   counterValue -= 1;
   valueEl.textContent = counterValue;
-};
+}
 
-const makeIncrement = function () {
+function makeIncrement() {
   counterValue += 1;
   valueEl.textContent = counterValue;
-};
+}
 
 buttonDecrement.addEventListener("click", makeDecrement);
 buttonIncrement.addEventListener("click", makeIncrement);
